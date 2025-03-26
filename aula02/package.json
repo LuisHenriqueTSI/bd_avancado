@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "type": "module",
     "firebase": "^11.5.0",
     "mongodb": "^6.15.0"
   }
