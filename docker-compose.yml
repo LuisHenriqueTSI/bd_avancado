@@ -1,0 +1,51 @@
+version: "3.8"
+
+services:
+  node:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: senha5
+    networks:
+      - app-network
+
+  php-server:
+    image: php:8.2-apache
+    volumes:
+      - ./php:/var/www/html
+    ports:
+      - "8000:80"
+    networks:
+      - app-network
+    depends_on:
+      - mongo
+    command: bash -c "apt update && apt install -y curl && chown -R www-data:www-data /var/www/html && apache2-foreground"
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - app-network
+
+  firebase:
+    image: node:latest
+    command: bash -c "npm install -g firebase-tools && tail -f /dev/null"
+    volumes:
+      - ./firebase:/usr/src/app
+    networks:
+      - app-network
+
+volumes:
+  mongodb_data:
+
+networks:
+  app-network:
+    driver: bridge
