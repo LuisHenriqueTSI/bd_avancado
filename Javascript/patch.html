@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<script>
+    $.ajax({
+        type: 'POST',
+        url: 'https://cstsibda-default-rtdb.firebaseio.com/users.json',
+        data: '{"nome":"Deltano","email":"Deltano@ifsul.edu.br"}', // or JSON.stringify ({name: 'jonas'}),
+        contentType: "application/json",
+        dataType: 'json'
+    });
+</script>
+
+</body>
+</html>

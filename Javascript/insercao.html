@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo de PATCH</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<script>
+    x = $.ajax({
+        type: 'PATCH',
+        url: 'https://bd-avancado-6d346-default-rtdb.firebaseio.com/users.json?auth=05ce5ea5da1998101565b80042c9830155d9223a',
+        data: '{"email":"deltano.js@ifsul.edu.br"}',
+        contentType: "application/json",
+        dataType: 'json'
+    });
+    console.log(x);
+</script>
+
+</body>
+</html>

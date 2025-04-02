@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
-import { getDatabase, set, ref } from "firebase/database";
+import { getDatabase, set, ref, push } from "firebase/database";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -27,3 +27,14 @@ let newUserId = 1;
 let refNode = ref(db, `users/${newUserId}`);
 let newUserData = { email: "fulano@ifsul.edu.br", username: "fulano" };
 set(refNode, newUserData);
+
+newUserId = 2;
+refNode = ref(db, `users/${newUserId}`);
+newUserData = { email: "sicrano@ifsul.edu.br", username: "sicrano" };
+set(refNode, newUserData);
+
+const newUser = {
+  email: "beltrano@ifsul.edu.br",
+  username: "beltrano",
+};
+push(ref(db, "users/"), newUser);
