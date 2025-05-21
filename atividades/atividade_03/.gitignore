@@ -1,0 +1,13 @@
+# Ignora credenciais e dados sensíveis
+/credentials/firebase_credentials.json
+
+# Ignora dependências do Composer
+/vendor/
+
+# Ignora arquivos temporários e do sistema
+*.log
+*.bak
+*.tmp
+.DS_Store
+.idea/
+.vscode/

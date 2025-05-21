@@ -1,0 +1,16 @@
+{
+    "name": "luishenrique/atividade_03",
+    "autoload": {
+        "psr-4": {
+            "Luishenrique\\Atividade03\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "luishenrique"
+        }
+    ],
+    "require": {
+        "google/cloud-firestore": "^1.50"
+    }
+}
